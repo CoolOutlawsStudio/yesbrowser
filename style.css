@@ -1,0 +1,195 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1221;
+  --card: #171b31;
+  --card-soft: #1f2642;
+  --text: #f1f4ff;
+  --muted: #b5bfde;
+  --accent: #7b90ff;
+  --accent-strong: #6280ff;
+  --danger: #ff6f91;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1b2144, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  width: min(900px, 95vw);
+  margin: 2rem auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #323d6f;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
+}
+
+.join-form,
+.message-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+}
+
+input,
+button {
+  border-radius: 10px;
+  border: 1px solid #3a4578;
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+}
+
+input {
+  background: #0f1530;
+  color: var(--text);
+}
+
+button,
+.upload-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+
+button:hover,
+.upload-btn:hover {
+  background: var(--accent-strong);
+}
+
+.secondary {
+  background: #2d355d;
+}
+
+.secondary:hover {
+  background: #424f8a;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.profile-preview-wrap {
+  min-height: 90px;
+}
+
+.profile-preview {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4e5ca0;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.messages {
+  margin-block: 1rem;
+  max-height: 360px;
+  overflow-y: auto;
+  display: grid;
+  gap: 0.75rem;
+  padding-right: 0.4rem;
+}
+
+.message {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bubble {
+  background: var(--card-soft);
+  border-radius: 12px;
+  padding: 0.55rem 0.7rem;
+  max-width: 85%;
+}
+
+.meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.content {
+  margin-top: 0.3rem;
+  word-break: break-word;
+}
+
+.content img {
+  max-width: 150px;
+  border-radius: 10px;
+}
+
+.message-form {
+  grid-template-columns: 1fr auto;
+}
+
+.stickers {
+  margin-top: 1.2rem;
+}
+
+.sticker-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-btn {
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+}
+
+.upload-btn input {
+  display: none;
+}
+
+.sticker-tray {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(74px, 1fr));
+  gap: 0.7rem;
+}
+
+.sticker-btn {
+  background: #0f1530;
+  border: 1px solid #3b4880;
+  padding: 0.35rem;
+  border-radius: 10px;
+}
+
+.sticker-btn img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}

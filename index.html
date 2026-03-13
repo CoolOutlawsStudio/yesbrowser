@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticker Room Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="card" id="joinCard">
+        <h1>Join a Sticker Room</h1>
+        <form id="joinForm" class="join-form">
+          <label>
+            Room Code
+            <input type="text" id="roomCode" placeholder="e.g. COOL123" required maxlength="20" />
+          </label>
+          <label>
+            Display Name
+            <input type="text" id="displayName" placeholder="Your custom name" required maxlength="24" />
+          </label>
+          <label>
+            Profile Picture
+            <input type="file" id="profilePic" accept="image/*" required />
+          </label>
+          <div class="profile-preview-wrap">
+            <img id="profilePreview" alt="Profile preview" class="profile-preview hidden" />
+          </div>
+          <button type="submit">Join Room</button>
+        </form>
+      </section>
+
+      <section class="card hidden" id="chatCard">
+        <header class="chat-header">
+          <div>
+            <h2 id="roomTitle">Room</h2>
+            <p id="userBadge"></p>
+          </div>
+          <button id="leaveBtn" class="secondary">Leave</button>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <form id="messageForm" class="message-form">
+          <input type="text" id="messageInput" placeholder="Type a message..." maxlength="250" />
+          <button type="submit">Send</button>
+        </form>
+
+        <section class="stickers">
+          <div class="sticker-head">
+            <h3>Your Sticker Pack</h3>
+            <label class="upload-btn">
+              Upload Sticker(s)
+              <input type="file" id="stickerUpload" accept="image/*" multiple />
+            </label>
+          </div>
+          <div id="stickerTray" class="sticker-tray"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="messageTemplate">
+      <article class="message">
+        <img class="avatar" alt="avatar" />
+        <div class="bubble">
+          <p class="meta"></p>
+          <div class="content"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
